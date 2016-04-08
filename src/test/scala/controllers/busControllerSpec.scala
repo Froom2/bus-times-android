@@ -25,18 +25,19 @@ class BusTimesSpec extends PlaySpec with MockitoSugar {
 
   "nextBus" must {
 
-    "return the next bus when there is one" in {
+    "return the time and number of the next bus when there is one" in {
       when(mockTimetableList.findNext(any[String], any[LocalTime]))
         .thenReturn(Some(Bus("Weekday", new LocalTime(11, 0), "63")))
 
-      SUT.nextBus mustBe Right(Bus("Weekday", new LocalTime(11, 0), "63"))
+      SUT.nextBusTime mustBe "11:00"
+      SUT.nextBusNumber mustBe "63"
     }
 
     "return an error when there are no more busses" in {
       when(mockTimetableList.findNext(any[String], any[LocalTime]))
         .thenReturn(None)
 
-      SUT.nextBus mustBe Left("Moooooo no more busses :(")
+      SUT.nextBusNumber mustBe "Moooooo no more busses :("
     }
   }
 }

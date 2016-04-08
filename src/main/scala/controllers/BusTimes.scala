@@ -8,16 +8,28 @@ import org.joda.time.LocalDateTime
 
 class BusTimes extends compositionReal {
 
-  def nextBus: Either[String, Bus] = {
+  def nextBusTime: String = {
 
     val next: Option[Bus] = timeTableService
       .findNext(timeService.dayType(timeService.nowLocalDate), timeService.nowLocalTime) // need to sort out so it deals with weekdays properly
 
     next match {
-      case Some(bus) => Right(bus)
-      case _ => Left("Moooooo no more busses :(")
+      case Some(bus) => bus.displayTime
+      case _ => "Moooooo no more busses :("
     }
   }
+
+  def nextBusNumber: String = {
+
+    val next: Option[Bus] = timeTableService
+      .findNext(timeService.dayType(timeService.nowLocalDate), timeService.nowLocalTime) // need to sort out so it deals with weekdays properly
+
+    next match {
+      case Some(bus) => bus.timetableBus
+      case _ => "Moooooo no more busses :("
+    }
+  }
+
 }
 
 
