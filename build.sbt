@@ -16,6 +16,7 @@ proguardOptions in Android ++= Seq("-dontobfuscate", "-dontoptimize", "-keepattr
   , "-dontwarn org.joda.**"
   , "-keep class org.joda.time.**"
   , "-keep class org.joda.convert.**"
+  , "-keep class org.mockito.**"
 )
 
 libraryDependencies += "org.scaloid" %% "scaloid" % "4.2"
@@ -32,7 +33,8 @@ libraryDependencies ++= Seq(
   "com.novocode" % "junit-interface" % "0.11" % "test",
   "org.scalatest" %% "scalatest" % "2.2.1" % "test",
   "org.scalatestplus" %% "play" % "1.4.0-M3" % "test",
-  "joda-time" % "joda-time" % "2.9.3"
+  "joda-time" % "joda-time" % "2.9.3",
+  "org.mockito" % "mockito-core" % "1.9.5" % "test"
 )
 
 // without this, @Config throws an exception,

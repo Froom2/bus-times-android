@@ -5,7 +5,7 @@ import android.graphics.Color
 import BusTimes.BusTest
 import scaloid.busMain.R.string
 
-class HelloScaloid extends SActivity {
+class busView extends SActivity {
   lazy val meToo = new STextView("Me too")
   lazy val redBtn = new SButton(string.red)
 
