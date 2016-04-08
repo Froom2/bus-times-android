@@ -2,6 +2,7 @@ package scaloid.example
 
 import org.scaloid.common._
 import android.graphics.Color
+import BusTimes.BusTest
 
 class HelloScaloid extends SActivity {
   lazy val meToo = new STextView("Me too")
@@ -18,6 +19,7 @@ class HelloScaloid extends SActivity {
         .textColor(Color.BLACK)
       }
       STextView("I am 10 dip tall")
+      STextView(BusTest.word)
       meToo.here
       STextView("I am 15 dip tall") textSize 15.dip // overriding
       new SLinearLayout {

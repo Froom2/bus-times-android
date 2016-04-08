@@ -13,6 +13,6 @@ class HelloScaloidTest {
     val activity = Robolectric.setupActivity(classOf[HelloScaloid])
     assertTrue(activity.meToo.text == "Me too")
     activity.redBtn.performClick()
-    assertTrue(activity.meToo.text == "PRESSED")
+    assertTrue(activity.meToo.text == "WOW YOU PRESSED THE BUTTON")
   }
 }

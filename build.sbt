@@ -26,7 +26,9 @@ libraryDependencies ++= Seq(
   "org.apache.maven" % "maven-ant-tasks" % "2.1.3" % "test",
   "org.robolectric" % "robolectric" % "3.0" % "test",
   "junit" % "junit" % "4.12" % "test",
-  "com.novocode" % "junit-interface" % "0.11" % "test"
+  "com.novocode" % "junit-interface" % "0.11" % "test",
+  "org.scalatest" %% "scalatest" % "2.2.1" % "test",
+  "org.scalatestplus" %% "play" % "1.4.0-M3" % "test"
 )
 
 // without this, @Config throws an exception,
