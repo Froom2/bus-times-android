@@ -13,6 +13,9 @@ proguardCache in Android ++= Seq("org.scaloid")
 proguardOptions in Android ++= Seq("-dontobfuscate", "-dontoptimize", "-keepattributes Signature", "-printseeds target/seeds.txt", "-printusage target/usage.txt"
   , "-dontwarn scala.collection.**" // required from Scala 2.11.4
   , "-dontwarn org.scaloid.**" // this can be omitted if current Android Build target is android-16
+  , "-dontwarn org.joda.**"
+  , "-keep class org.joda.time.**"
+  , "-keep class org.joda.convert.**"
 )
 
 libraryDependencies += "org.scaloid" %% "scaloid" % "4.2"
@@ -28,7 +31,8 @@ libraryDependencies ++= Seq(
   "junit" % "junit" % "4.12" % "test",
   "com.novocode" % "junit-interface" % "0.11" % "test",
   "org.scalatest" %% "scalatest" % "2.2.1" % "test",
-  "org.scalatestplus" %% "play" % "1.4.0-M3" % "test"
+  "org.scalatestplus" %% "play" % "1.4.0-M3" % "test",
+  "joda-time" % "joda-time" % "2.9.3"
 )
 
 // without this, @Config throws an exception,
