@@ -1,12 +1,13 @@
-package scaloid.example
+package scaloid.busMain
 
 import org.scaloid.common._
 import android.graphics.Color
 import BusTimes.BusTest
+import scaloid.busMain.R.string
 
 class HelloScaloid extends SActivity {
   lazy val meToo = new STextView("Me too")
-  lazy val redBtn = new SButton(R.string.red)
+  lazy val redBtn = new SButton(string.red)
 
   onCreate {
     contentView = new SVerticalLayout {

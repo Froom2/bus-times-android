@@ -1,10 +1,11 @@
-package scaloid.example
+package scaloid.busMain
 
 import org.junit.Assert._
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.annotation.Config
 import org.robolectric.{Robolectric, RobolectricTestRunner}
+import scaloid.busMain.HelloScaloid
 
 @RunWith(classOf[RobolectricTestRunner])
 @Config(manifest = "src/main/AndroidManifest.xml")
